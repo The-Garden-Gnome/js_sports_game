@@ -1,12 +1,93 @@
+body {
+    box-sizing: border-box;
+    background-color:#e5e8ee;
+    font-family: Verdana;
+    
+}
+
+.body {
+    width: max-content;
+    border: 1px solid black;
+    position: relative;
+    border-radius: 1.75%;
+    margin:  0 auto;
+    justify-content: center;
+    background-color: #29303c;
+}
+
+h1 {
+    color: #fdcd47;
+}
+
+#reset-button {
+    background-color: #e5e8ee;
+    margin-bottom: 5px;
+}
+
+button {
+    border-radius: 20px;
+    background-color: #fdcd47;
+}
+
 .hide {
     display: none;
 }
+
+.mainbody {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 5px 10px;
+    width: 750px;
+}
+
 .left {
-    float: left;
+    display: flex;
+    border: 1px solid black;
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+    flex-direction: column;
+    width: max-content;
+    background-color: #e5e8ee;
 }
 .right {
-    float: right;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+    flex-direction: column;
+    align-items: flex-end;
+    width: max-content;
+    background-color: #e5e8ee;
 }
+
+.bottom {
+    position: relative;
+    width: max-content;
+    border-radius: 1.75%;
+    margin:  25px auto 0px;
+}
+#cayde {
+    position: relative;
+    height: 254px;
+    width: 185px;
+    margin: 0px auto ;
+}
+
+#cayde img {
+    display: none;
+}
+
+#cayde.cayde img {
+    display: block; 
+}
+
+.hive {
+    position: relative;
+    left: -10px;
+    width: max-content;
+    margin: 0px auto 10px;
+}
+
 .clear {
     clear: both;
 }

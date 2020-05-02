@@ -15,6 +15,9 @@ let team2goals = document.querySelector("#teamtwo-numgoals");
 let resetnumber = document.querySelector("#num-resets");
 let reset = document.querySelector("#reset-button");
 
+let hive = document.querySelector("#hive-button");
+let cayde = document.querySelector("#cayde");
+
 team1shoot.addEventListener("click",
     function () {
         shotsTeam1 += 1;
@@ -61,4 +64,15 @@ reset.addEventListener("click",
         team1shots.innerText = shotsTeam1;
         team2goals.innerText = goalsTeam2;
         team2shots.innerText = shotsTeam2;
+
+        cayde.classList.remove("cayde");
+    });
+
+    hive.addEventListener("click",
+    function () {
+        let myAudioElement = new Audio('assets/media/weve_woken_the_hive.mp3');
+        myAudioElement.addEventListener("canplaythrough", event => {
+            myAudioElement.play();
+          });
+        cayde.classList.add("cayde");
     });
