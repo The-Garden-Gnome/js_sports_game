@@ -58,15 +58,15 @@ reset.addEventListener("click",
             myAudioElement.play();
         });
 
-        if (goalsTeam1 == goalsTeam2 == 0) {
+        if (goalsTeam1 == goalsTeam2) {
             winner.innerText = "GIVE US THE PRIMUS OR WE BLOW THE SHIP!";
-            }
-            
-        if (goalsTeam1 > goalsTeam2){
+        }
+
+        else if (goalsTeam1 > goalsTeam2) {
             winner.innerText = "WINNER IS TEAM 1!";
         }
 
-        else{
+        else {
             winner.innerText = "WINNER IS TEAM 2!";
         }
 
