@@ -16,8 +16,13 @@ let resetnumber = document.querySelector("#num-resets");
 let reset = document.querySelector("#reset-button");
 
 let hive = document.querySelector("#hive-button");
-let cayde = document.querySelector("#cayde");
+let images = document.querySelector("#images");
 let winner = document.querySelector("#winner");
+
+function resetWinner() {
+    winner.innerText = "";
+    winner.classList.remove("winner");
+}
 
 team1shoot.addEventListener("click",
     function () {
@@ -31,7 +36,9 @@ team1shoot.addEventListener("click",
             goalsTeam1 += 1;
             team1goals.innerText = goalsTeam1;
         }
-        winner.classList.remove("winner");
+        resetWinner();  
+        images.classList.remove("shaxx");
+    
     });
 
 team2shoot.addEventListener("click",
@@ -46,7 +53,9 @@ team2shoot.addEventListener("click",
             goalsTeam2 += 1;
             team2goals.innerText = goalsTeam2;
         }
-        winner.classList.remove("winner");
+        resetWinner();
+        images.classList.remove("shaxx");
+
     });
 
 reset.addEventListener("click",
@@ -61,15 +70,16 @@ reset.addEventListener("click",
         if (goalsTeam1 == goalsTeam2) {
             winner.innerText = "GIVE US THE PRIMUS OR WE BLOW THE SHIP!";
         }
-
-        else if (goalsTeam1 > goalsTeam2) {
-            winner.innerText = "WINNER IS TEAM 1!";
-        }
-
         else {
-            winner.innerText = "WINNER IS TEAM 2!";
+            images.classList.add("shaxx");
+            if (goalsTeam1 > goalsTeam2) {
+                winner.innerText = "WINNER IS TEAM 1!";
+            }
+            else {
+                winner.innerText = "WINNER IS TEAM 2!";
+            }
         }
-
+        winner.classList.add("winner");
 
         goalsTeam1 = 0;
         goalsTeam2 = 0;
@@ -81,8 +91,7 @@ reset.addEventListener("click",
         team2goals.innerText = goalsTeam2;
         team2shots.innerText = shotsTeam2;
 
-        cayde.classList.remove("cayde");
-        winner.classList.add("winner");
+        images.classList.remove("cayde");
     });
 
 hive.addEventListener("click",
@@ -91,5 +100,8 @@ hive.addEventListener("click",
         myAudioElement.addEventListener("canplaythrough", event => {
             myAudioElement.play();
         });
-        cayde.classList.add("cayde");
+
+        if (!images.classList.contains("shaxx")) {
+            images.classList.add("cayde");
+        }
     });

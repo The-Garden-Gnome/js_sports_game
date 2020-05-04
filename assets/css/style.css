@@ -7,7 +7,8 @@ body {
 
 .body {
     width: max-content;
-    border: 5px solid black;
+    border: 1px solid black;
+    border-bottom: 5px solid #28b1f7;
     position: relative;
     border-radius: 10px;
     margin:  0 auto;
@@ -22,7 +23,6 @@ h1 {
 }
 
 img#logo {
-    /* border: 1px solid black; */
     width: 50px;
     height: 50px;
 }
@@ -55,9 +55,10 @@ button {
     width: 750px;
 }
 
-.left {
+#left {
     display: flex;
     border: 1px solid black;
+    border-bottom: 5px solid #28b1f7;
     padding: 5px 5px 5px 5px;
     border-radius: 10px;
     flex-direction: column;
@@ -65,9 +66,11 @@ button {
     height: 169.8px;
     background-color: #e5e8ee;
 }
+
 .right {
     display: flex;
     border: 1px solid black;
+    border-bottom: 5px solid #28b1f7;
     border-radius: 10px;
     padding: 5px 5px 5px 5px;
     flex-direction: column;
@@ -83,18 +86,27 @@ button {
     border-radius: 10px;
     margin:  25px auto 0px;
 }
-#cayde {
-    position: relative;
+#images {
     height: 254px;
+    margin: 0px auto;
+    position: relative;
     width: 185px;
-    margin: 0px auto ;
 }
 
-#cayde img {
+#images img {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+#images img.cayde,
+#images img.shaxx,
+#images.shaxx.cayde img.cayde  {
     display: none;
 }
 
-#cayde.cayde img {
+#images.cayde img.cayde,
+#images.shaxx img.shaxx  {
     display: block; 
 }
 
@@ -105,17 +117,28 @@ button {
     margin: 0px auto ;
     display: none;
     border: 1px solid black;
+    border-bottom: 5px solid #28b1f7;
     padding: 5px 5px 5px 5px;
     border-radius: 10px;
     flex-direction: column;
     width: 166.8px;
     height: 169.8px;
     background-color: #e5e8ee;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#shaxx {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0px auto ;
+    display: block;
 }
 
 #winner.winner {
     display: block; 
- 
 }
 
 .hive {
